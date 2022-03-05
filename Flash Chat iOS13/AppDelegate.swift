@@ -8,6 +8,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        if #available(iOS 15.0, *) {
+                let navBarAppearance = UINavigationBarAppearance()
+                navBarAppearance.configureWithOpaqueBackground()
+                //Configure additional customizations here
+                UINavigationBar.appearance().standardAppearance = navBarAppearance
+                UINavigationBar.appearance().scrollEdgeAppearance = navBarAppearance
+        }
        
         
         FirebaseApp.configure()
